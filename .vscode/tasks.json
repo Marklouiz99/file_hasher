@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build filehasher",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-std=c++20",
+          "-I./cxxopts/include",          
+          "main.cpp",
+          "HashTask.cpp",
+          "Hasher.cpp",
+          "FileMapper.cpp",
+          "ResultCollector.cpp",
+          "-o", "filehasher",
+          "-lssl", "-lcrypto"      // Link OpenSSL libraries
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
